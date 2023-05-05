@@ -26,7 +26,8 @@ export class AppComponent implements OnInit {
       titreArticle: "Vélo",
       prixArticle: 80,
       description: "Un super vélo tout terrain",
-      urlImg: "https://via.placeholder.com/300x200",
+      /* urlImg: "https://via.placeholder.com/300x200", */
+      urlImg: "../assets/velo.png",
       textAltImg: "Un vélo",
       dispo: false
     },
@@ -34,7 +35,7 @@ export class AppComponent implements OnInit {
       titreArticle: "TV",
       prixArticle: 230,
       description: "Très bonne qualité d'acran",
-      urlImg: "https://via.placeholder.com/300x200",
+      urlImg: "../assets/tv.png",
       textAltImg: "Un Téveviseur",
       dispo: true
     },
@@ -42,7 +43,7 @@ export class AppComponent implements OnInit {
       titreArticle: "Jouet",
       prixArticle: 80,
       description: "Super jouet enfant",
-      urlImg: "https://via.placeholder.com/300x200",
+      urlImg: "../assets/jouet.png",
       textAltImg: "Un jouet",
       dispo: true
     },
@@ -51,3 +52,4 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
   }
 }
+ 

@@ -24,6 +24,7 @@ export class ArticleComponent {
   @Input() urlImg: string;
   @Input() textAltImg: string;
   @Input() dispo: boolean;
+  jaime:boolean = true;
 
 
   constructor(){}
@@ -31,8 +32,23 @@ export class ArticleComponent {
   ngOnInit():void {}
 
   onLike() {
-    this.totalNbrLike++;
+    if (this.jaime === true) {
+      this.totalNbrLike++;
+      this.jaime = false;
+    }else {
+      this.totalNbrLike--;
+      this.jaime = true;
+    }
+
     this.info.emit(this.titreArticle);
+  }
+
+  getColor() {
+    if(this.dispo === true) {
+      return "green";
+    } else {
+      return "red";
+    }
   }
 
 }
