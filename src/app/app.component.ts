@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service'
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'bonneaffaire';
+  articles;
 
   prix1: number = 80;
   prix2: number = 230;
@@ -14,42 +16,16 @@ export class AppComponent implements OnInit {
 
   message:string = "";
 
-  constructor  () {
+  constructor  (private dataService:DataService) {
+
   }
 
   onAffiche(arg:string) {
     return this.message = "Merci d'avoir voté pour l'article: "+ arg;
   }
 
-  articles = [
-    {
-      titreArticle: "Vélo",
-      prixArticle: 80,
-      description: "Un super vélo tout terrain",
-      /* urlImg: "https://via.placeholder.com/300x200", */
-      urlImg: "../assets/velo.png",
-      textAltImg: "Un vélo",
-      dispo: false
-    },
-    {
-      titreArticle: "TV",
-      prixArticle: 230,
-      description: "Très bonne qualité d'acran",
-      urlImg: "../assets/tv.png",
-      textAltImg: "Un Téveviseur",
-      dispo: true
-    },
-    {
-      titreArticle: "Jouet",
-      prixArticle: 80,
-      description: "Super jouet enfant",
-      urlImg: "../assets/jouet.png",
-      textAltImg: "Un jouet",
-      dispo: true
-    },
-  ]
 
   ngOnInit(): void {
+    this.articles = this.dataService.articles;
   }
 }
- 

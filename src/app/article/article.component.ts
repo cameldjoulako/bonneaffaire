@@ -15,7 +15,7 @@ export class ArticleComponent {
 
   totalNbrLike:number = 0;
   comment:string = "Ceci est un commentaire";
-  @Output() info = new EventEmitter<string>();
+  @Output() info = new EventEmitter<string>();/*pour envoyer de l'enfant vers le parent*/
 
 
   @Input() titreArticle: string;

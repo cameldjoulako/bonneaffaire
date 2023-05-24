@@ -22,7 +22,10 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/acadig.png"
+              "src/images/acadig.png",
+              "src/images/jouet.png",
+              "src/images/tv.png",
+              "src/images/velo.png"
             ],
             "styles": [
               "src/styles.css",
