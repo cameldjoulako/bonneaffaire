@@ -1,0 +1,41 @@
+<div class="add">
+  <h1>Ajouter un nouvel article</h1>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label for="">Titre</label>
+    <input
+      type="text"
+      name="title"
+      #title="ngModel"
+      required
+      [(ngModel)]="titleToAdd"
+      minlength="4"
+    />
+    <div *ngIf="title.invalid && (title.dirty || title.touched)">
+      <div *ngIf="title.errors?.['required']">Titre Obligatoire</div>
+      <div *ngIf="title.errors?.['minlength']">
+        Le titre doit avoir au minimum 4 caractères
+      </div>
+    </div>
+    <br />
+
+    <label for="">Prix</label>
+    <input
+      type="number"
+      name="price"
+      id=""
+      required
+      [(ngModel)]="priceToAdd"
+      #price="ngModel"
+    />
+    <div *ngIf="price.invalid && (price.dirty || price.touched)">
+      <div *ngIf="price.errors?.['required']">Prix Obligatoire</div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+      Envoyer
+    </button>
+    <br />
+  </form>
+</div>

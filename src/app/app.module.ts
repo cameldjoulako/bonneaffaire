@@ -9,6 +9,10 @@ import { DataService } from './data.service';
 import { ListeComponent } from './liste/liste.component';
 import { DetailsComponent } from './details/details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AjouterComponent } from './ajouter/ajouter.component';
+import { AjoutComponent } from './ajout/ajout.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,12 +20,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ArticleComponent,
     ListeComponent,
     DetailsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AjouterComponent,
+    AjoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

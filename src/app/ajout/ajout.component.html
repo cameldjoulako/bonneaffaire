@@ -1,0 +1,18 @@
+<div class="add">
+  <h1>Ajouter un nouvel article - Reactif</h1>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label for="">Titre</label>
+    <input type="text" name="title" [formControl]="titleToAdd" />
+    <br />
+
+    <label for="">Prix</label>
+    <input type="number" name="price" [formControl]="priceToAdd" />
+
+    <br />
+
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+      Envoyer
+    </button>
+    <br />
+  </form>
+</div>

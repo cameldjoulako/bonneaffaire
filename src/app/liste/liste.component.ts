@@ -20,7 +20,13 @@ export class ListeComponent implements OnInit{
 
 
   ngOnInit(): void {
+    /* this.articles = this.dataService.articles; */
     this.articles = this.dataService.articles;
   }
+
+  getList() {
+    this.dataService.getArticleFromServer.subscribe(liste => {this.articles = articles})
+  }
+
 
 }

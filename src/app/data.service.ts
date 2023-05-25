@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-
+/*
   articles = [
     {
       id: 1,
@@ -12,7 +13,6 @@ export class DataService {
       prixArticle: 80,
       description: "Un super vélo tout terrain",
       urlImg: "https://via.placeholder.com/300x200",
-     /*  urlImg: "../assets/images/velo.png", */
       textAltImg: "Un vélo",
       dispo: false
     },
@@ -34,9 +34,11 @@ export class DataService {
       textAltImg: "Un jouet",
       dispo: true
     },
-  ]
+  ]*/
 
-  constructor() { }
+  articles: any;
+
+  constructor(private httpClient: HttpClient) { }
 
   getArticle(id: number){
     const articles = this.articles.find((a) => {
@@ -44,5 +46,10 @@ export class DataService {
     });
     return articles;
 
+  }
+
+  getArticleFromServer() {
+    //let server = "https://labonneaffaire-ec69f-default-rtdb.europe-west1.firebasedatabase.app/data.json"
+    return this.httpClient.get<any[]>('https://labonneaffaire-ec69f-default-rtdb.europe-west1.firebasedatabase.app/data.json')
   }
 }
