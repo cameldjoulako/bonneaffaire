@@ -7,6 +7,7 @@ export class DataService {
 
   articles = [
     {
+      id: 1,
       titreArticle: "Vélo",
       prixArticle: 80,
       description: "Un super vélo tout terrain",
@@ -16,6 +17,7 @@ export class DataService {
       dispo: false
     },
     {
+      id: 2,
       titreArticle: "TV",
       prixArticle: 230,
       description: "Très bonne qualité d'acran",
@@ -24,6 +26,7 @@ export class DataService {
       dispo: true
     },
     {
+      id: 3,
       titreArticle: "Jouet",
       prixArticle: 80,
       description: "Super jouet enfant",
@@ -34,4 +37,12 @@ export class DataService {
   ]
 
   constructor() { }
+
+  getArticle(id: number){
+    const articles = this.articles.find((a) => {
+      return a.id == id;
+    });
+    return articles;
+
+  }
 }

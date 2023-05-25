@@ -24,6 +24,7 @@ export class ArticleComponent {
   @Input() urlImg: string;
   @Input() textAltImg: string;
   @Input() dispo: boolean;
+  @Input() idArticle: number;
   jaime:boolean = true;
 
 

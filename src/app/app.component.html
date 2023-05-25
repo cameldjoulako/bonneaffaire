@@ -23,47 +23,7 @@
   </div>
 </nav>
 
-<!-- contenu -->
-<div id="alertMsg">
-  <p>
-    {{ message }}
-  </p>
-</div>
-<div id="home" class="container">
-  <app-article
-    *ngFor="let article of articles"
-    [titreArticle]="article.titreArticle"
-    [prixArticle]="article.prixArticle"
-    [description]="article.description"
-    [urlImg]="article.urlImg"
-    [dispo]="article.dispo"
-    (info)="onAffiche($event)"
-  ></app-article>
-  <!-- <app-article
-    [prixArticle]="80"
-    [titreArticle]="'Velo'"
-    [description]="'Un super Vélo tout terrain'"
-    [urlImg]="'https://via.placeholder.com/300x200'"
-    [dispo]="false"
-    (info)="onAffiche($event)"
-  ></app-article>
-  <app-article
-    [prixArticle]="230"
-    [titreArticle]="'TV'"
-    [description]="'Tres bonne résolution'"
-    [urlImg]="'https://via.placeholder.com/300x200'"
-    [dispo]="true"
-    (info)="onAffiche($event)"
-  ></app-article>
-  <app-article
-    [prixArticle]="80"
-    [titreArticle]="'Jouet'"
-    [description]="'Super jouet enfant'"
-    [urlImg]="'https://via.placeholder.com/300x200'"
-    [dispo]="true"
-    (info)="onAffiche($event)"
-  ></app-article> -->
-</div>
+<router-outlet></router-outlet>
 
 <!-- pied de page -->
 <footer class="py-5 bg-dark">
